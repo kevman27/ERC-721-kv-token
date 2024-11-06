@@ -4,12 +4,12 @@ const { SwisstronikPlugin } = require("@swisstronik/web3-plugin-swisstronik");
 hre.web3.registerPlugin(new SwisstronikPlugin(hre.network.config.url));
 
 async function main() {
-  const replace_contractAddress = "0xdc94B70eF632B530c8ae92A9E964B594Bed963Db";
+  const replace_contractAddress = "0x";
   const [from] = await hre.web3.eth.getAccounts();
   const contractFactory = await hre.ethers.getContractFactory("TestNFT");
   const ABI = JSON.parse(contractFactory.interface.formatJson());
   const contract = new hre.web3.eth.Contract(ABI, replace_contractAddress);
-  const replace_functionArgs = "0x1Ff31Ae882ccF4CDaB8ba8f95B53023452E42f70"; // Recipient address
+  const replace_functionArgs = "0x"; // Recipient address
   console.log("Minting 1 token...");
   try {
     console.log(from, "from");
